@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>VQ - URL Encoded Example</title>
+  </head>
+  <body>
+    <div id="container">
+      <h2>VQ - URL Encoded Example</h2>
+      <p><b>Name</b> and <b>numeric fields</b> are populated by URL parameters</p>
+      <iframe id="VQ" allow="fullscreen"></iframe>
+    </div>
+    
+    <script>
+      const VQ = document.getElementById('VQ');
+      const data = {
+          name: 'AHMET',
+          podcast_count: 45,
+          song1_name: 'A',
+          song1_time: 6748,
+          song2_name: 'B',
+          song2_time: 7980,
+          song3_name: 'C',
+          song3_time: 8789,
+          song4_name: 'D',
+          song5_name: 'E',
+          time: 240587
+      };
+
+      // URL'yi oluşturun
+      VQ.src = `https://play.omma.io/c/c0iJbE/index.html?name=${encodeURIComponent(data.name)}&time=${data.time}&song1_time=${data.song1_time}&song2_time=${data.song2_time}&song3_time=${data.song3_time}&song1_name=${encodeURIComponent(data.song1_name)}&song2_name=${encodeURIComponent(data.song2_name)}&song3_name=${encodeURIComponent(data.song3_name)}&song4_name=${encodeURIComponent(data.song4_name)}&song5_name=${encodeURIComponent(data.song5_name)}&podcast_count=${data.podcast_count}`;
+    </script>
+  </body>
+</html>
